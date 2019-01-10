@@ -374,8 +374,7 @@ static BOOL RCTAnyTouchesChanged(NSSet<UITouch *> *touches)
 
 - (BOOL)gestureRecognizer:(__unused UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
-  // Same condition for `failure of` as for `be prevented by`.
-  return [self canBePreventedByGestureRecognizer:otherGestureRecognizer];
+  return NO;
 }
 
 @end
