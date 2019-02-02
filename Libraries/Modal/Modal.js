@@ -62,6 +62,7 @@ class Modal extends React.Component<Object> {
       'pageSheet',
       'formSheet',
       'overFullScreen',
+      'overCurrentContext',
     ]),
     /**
      * The `transparent` prop determines whether your modal will fill the
@@ -189,7 +190,7 @@ class Modal extends React.Component<Object> {
   static _confirmProps(props: Object) {
     if (
       props.presentationStyle &&
-      props.presentationStyle !== 'overFullScreen' &&
+      !['overFullScreen', 'overCurrentContext'].includes(props.presentationStyle) &&
       props.transparent
     ) {
       console.warn(
